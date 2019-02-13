@@ -32,6 +32,7 @@ public class PokedexPanel extends JPanel
 	private JLabel imageLabel;
 	
 	
+	
 	public PokedexPanel(PokedexController appController)
 	{
 		super();
