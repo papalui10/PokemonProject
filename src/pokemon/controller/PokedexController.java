@@ -1,5 +1,6 @@
 package pokemon.controller;
 
+import java.io.*;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -10,11 +11,12 @@ import pokemon.model.Oshawott;
 import pokemon.model.Piplup;
 import pokemon.model.Pokemon;
 import pokemon.model.Wooper;
+import pokemon.model.Thatrick;
 import pokemon.view.PokedexFrame;
 
 public class PokedexController
 {
-	
+	private String saveFile = "backup.pokemon";
 	private ArrayList<Pokemon> pokemonList;
 	private PokedexFrame appFrame;
 	
@@ -33,6 +35,7 @@ public class PokedexController
 		pokemonList.add(new Oshawott());
 		pokemonList.add(new Wooper());
 		pokemonList.add(new Piplup());
+		pokemonList.add(new Thatrick());
 	}
 	
 	public void updatePokemon(int index, String [] data)
@@ -91,5 +94,21 @@ public class PokedexController
 		}
 		
 		return isValid;
+	}
+	
+	public void savePokedex()
+	{
+		try
+		{
+			FileOutputStream saveStream = new FileOutputStream(saveFile);
+			ObjectOutputStream output = new ObjectOutputStream(saveStream);
+			output.writeObject(pokemonList);
+			output.close();
+			saveStream.close();
+		}
+		catch(IOException error)
+		{
+			JOptionPane.showMessageDialog(appFrame, error.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 }

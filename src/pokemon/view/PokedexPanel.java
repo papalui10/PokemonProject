@@ -13,6 +13,7 @@ public class PokedexPanel extends JPanel
 	private PokedexController appController;
 	private SpringLayout appLayout;
 	
+	private JButton saveButton;
 	private JButton changeButton;
 	private JComboBox pokedexDropDown;
 	
@@ -118,6 +119,7 @@ public class PokedexPanel extends JPanel
 		this.add(healthLabel);
 		this.add(imageLabel);
 		
+		this.add(saveButton);
 		this.add(changeButton);
 		this.add(pokedexDropDown);
 		this.setBackground(Color.CYAN);
@@ -146,6 +148,14 @@ public class PokedexPanel extends JPanel
 			{
 				String name = pokedexDropDown.getSelectedItem().toString();
 				changeImageDisplay(name);
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.savePokedex();
 			}
 		});
 	}
