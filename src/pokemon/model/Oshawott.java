@@ -16,4 +16,14 @@ public class Oshawott extends Pokemon implements WaterType
 	{
 		
 	}
+	
+	public Oshawott()
+	{
+		super(501, "Oshawott");
+	}
+	
+	public Oshawott(String name)
+	{
+		super(501, name);
+	}
 }

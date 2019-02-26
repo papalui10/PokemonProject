@@ -16,4 +16,14 @@ public class Wooper extends Pokemon implements WaterType
 	{
 		
 	}
+	
+	public Wooper()
+	{
+		super(194, "Wooper");
+	}
+	
+	public Wooper(String name)
+	{
+		super(194, name);
+	}
 }

@@ -17,4 +17,13 @@ public class Piplup extends Pokemon implements WaterType
 		
 	}
 
+	public Piplup()
+	{
+		super(393, "Piplup");
+	}
+	
+	public Piplup(String name)
+	{
+		super(393, name);
+	}
 }

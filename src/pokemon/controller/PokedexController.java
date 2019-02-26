@@ -2,17 +2,37 @@ package pokemon.controller;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
+import pokemon.model.BellSprout;
+import pokemon.model.Mareep;
+import pokemon.model.Oshawott;
+import pokemon.model.Piplup;
 import pokemon.model.Pokemon;
+import pokemon.model.Wooper;
+import pokemon.view.PokedexFrame;
 
 public class PokedexController
 {
 	
-	//private Arraylist<Pokemon> pokemonList;
-	//private PokedexFrame appFrame;
+	private ArrayList<Pokemon> pokemonList;
+	private PokedexFrame appFrame;
 	
 	public PokedexController()
 	{
-		
+		pokemonList = new ArrayList<Pokemon>();
+		addPokemon();
+		appFrame = new PokedexFrame(this);
+	}
+	
+	
+	private void addPokemon()
+	{
+		pokemonList.add(new BellSprout());
+		pokemonList.add(new Mareep());
+		pokemonList.add(new Oshawott());
+		pokemonList.add(new Wooper());
+		pokemonList.add(new Piplup());
 	}
 	
 	public void updatePokemon(int index, String [] data)
@@ -37,5 +57,39 @@ public class PokedexController
 			names[index] = pokemonList.get(index).getName();
 		}
 		return names;
+	}
+	
+	public boolean isInt(String maybeInt)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "Yes Pokemon");
+		}
+		
+		return isValid;
+	}
+	
+	public boolean isDouble(String mightBeDouble)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Double.parseDouble(mightBeDouble);
+			isValid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null,  "yee");
+		}
+		
+		return isValid;
 	}
 }

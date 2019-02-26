@@ -16,4 +16,14 @@ public class BellSprout extends Pokemon implements GrassType
 	{
 		return 5;
 	}
+	
+	public BellSprout()
+	{
+		super(69, "BellSprout");
+	}
+	
+	public BellSprout(String name)
+	{
+		super(69, name);
+	}
 }

@@ -16,4 +16,15 @@ public class Mareep extends Pokemon implements ElectricType
 	{
 		return 10;
 	}
+	
+	public Mareep()
+	{
+		super(179, "Mareep");
+	}
+	
+	public Mareep(String name)
+	{
+		super(179, name);
+	}
+	
 }
