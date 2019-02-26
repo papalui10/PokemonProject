@@ -1,4 +1,4 @@
-package pokemon.tests;
+package pokemon.tester;
 
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.platform.suite.api.SelectPackages;
