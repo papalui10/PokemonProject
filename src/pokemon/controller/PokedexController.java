@@ -2,7 +2,6 @@ package pokemon.controller;
 
 import java.io.*;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
 import pokemon.model.BellSprout;
@@ -40,9 +39,10 @@ public class PokedexController
 	
 	public PokedexController()
 	{
-		pokemonList = new ArrayList<Pokemon>();
+		this.pokemonList = new ArrayList<Pokemon>();
 		addPokemon();
 		appFrame = new PokedexFrame(this);
+		
 	}
 	
 	
@@ -151,4 +151,10 @@ public class PokedexController
 			JOptionPane.showMessageDialog(appFrame, pokemonError.getMessage(), "Type Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
+	public ArrayList<Pokemon> getPokemonList()
+	{
+		return pokemonList;
+	}
+	
 }
